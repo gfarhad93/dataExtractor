@@ -1,0 +1,31 @@
+PODS:
+  - NVActivityIndicatorView (5.0.0):
+    - NVActivityIndicatorView/Base (= 5.0.0)
+  - NVActivityIndicatorView/Base (5.0.0)
+  - PhoneNumberKit (3.2.0):
+    - PhoneNumberKit/PhoneNumberKitCore (= 3.2.0)
+    - PhoneNumberKit/UIKit (= 3.2.0)
+  - PhoneNumberKit/PhoneNumberKitCore (3.2.0)
+  - PhoneNumberKit/UIKit (3.2.0):
+    - PhoneNumberKit/PhoneNumberKitCore
+  - SSZipArchive (2.2.3)
+
+DEPENDENCIES:
+  - NVActivityIndicatorView
+  - PhoneNumberKit (~> 3.1)
+  - SSZipArchive
+
+SPEC REPOS:
+  trunk:
+    - NVActivityIndicatorView
+    - PhoneNumberKit
+    - SSZipArchive
+
+SPEC CHECKSUMS:
+  NVActivityIndicatorView: f109ed069924ac1b4adbc1ae9cfaeac0be1d6c2c
+  PhoneNumberKit: df411d46177d1492da84e10b6c093846dd861452
+  SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
+
+PODFILE CHECKSUM: 2aee84c42fc82b9ab689a5b3c3c6dda10292a768
+
+COCOAPODS: 1.9.1
