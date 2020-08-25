@@ -80,13 +80,14 @@ extension DataExtractor {
     }
     
     
-    private func matches(_ originalText:String)->String{
+    private func matches(_ originalText:String) -> String {
         var result = [String]()
         var re: NSRegularExpression!
         do {
-            re = try NSRegularExpression(pattern: "<w:t.*?>(.*?)<\\/w:t>", options: [])
+//            re = try NSRegularExpression(pattern: "<w:t.*?>(.*?)<\\/w:t>", options: [])
+            re = try NSRegularExpression(pattern: "\"(.*?)\"", options: [])
         } catch {
-            
+            print(error)
         }
         
         let matches = re.matches(in: originalText, options: [], range: NSRange(location: 0, length: originalText.utf16.count))
@@ -95,7 +96,16 @@ extension DataExtractor {
             
             result.append((originalText as NSString).substring(with: match.range(at: 1)))
         }
-        return result.joined(separator: "\n")
+        var str = ""
+        do {
+            let res = result.joined(separator: "\n")
+            let reg = try NSRegularExpression(pattern: "/[^a-zA-Z0-9\\s\\,\\.\\-\\n\\r\\t@\\/\\_\\(\\)]/", options: [])
+            str = reg.stringByReplacingMatches(in: res, options: [], range: NSRange(location: 0, length: res.count), withTemplate: "")
+        } catch {
+            print(error)
+        }
+        //
+        return str
     }
     
 }
